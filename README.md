@@ -6,8 +6,6 @@ Erstellung eines neuen Projektes mit Voreinstellungen wie bei Basis- oder Vorlag
 Strukturkennzeichen-Beschreibungsfelder (PropID 1000, 1002, 1007, 1008, 1009_1 bis 1009_10). 
 
 Bekannte Fehler:
-  - nicht Compilierbar wegen fehlender Objektreferenz (Object reference not set to an instance of an object.)
-    (ist schon spät)
   - momentan nur  für Anlagenkennzeichen vorgesehn
   - dutzende nicht behandelte Exceptions
   - nur ein Kennzeichen möglich (Iterationsschleife fehlt) 
