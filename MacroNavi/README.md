@@ -7,12 +7,12 @@ Download the scriptfile form MacroNavi/Templates/MacroNaviForm.cs and move it to
 Start P8 and run the scriptfile by selecting "Run.." in the Utilities>>Scripts menue. The script must/can not be loaded.
 
 Features:
--Navigate through your default macropath via tree-view. 
--preview by selecting a macro in the list
--place macro by doubleclicking or hitting enter on selection
--place defined representationtype by selecting from contextmenue
+  - Navigate through your default macropath via tree-view
+  - preview by selecting a macro in the list
+  - place macro by doubleclicking or hitting enter on selection
+  - place defined representationtype by selecting from contextmenue
 
 Known issues:
--no drag&drop supported
--contains ugly code
--no exceptionhandling
+  - no drag&drop supported
+  - contains ugly code
+  - no exceptionhandling
