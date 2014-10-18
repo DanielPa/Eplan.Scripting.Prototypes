@@ -2,6 +2,8 @@ Eplan Macro-Navigator
 =======================
 A simple navigator for Eplan Electric P8 to preview and place Macros without open-file-dialog.
 
+http://youtu.be/xpTT_k181Hw
+
 How to use:
 Download the scriptfile form MacroNavi/Templates/MacroNaviForm.cs and move it to your electric P8 script-folder.
 Start P8 and run the scriptfile by selecting "Run.." in the Utilities>>Scripts menue. The script must/can not be loaded.
