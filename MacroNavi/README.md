@@ -18,3 +18,4 @@ Known issues:
   - no drag&drop supported
   - contains ugly code
   - no exceptionhandling
+  - works only if one project is opened
