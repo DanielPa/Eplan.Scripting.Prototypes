@@ -71,6 +71,9 @@
     <EmbeddedResource Include="Templates\MacroNaviForm.resx">
       <DependentUpon>MacroNaviForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Eplanwiki.Scripting.MacroNavi.Resources.datasource" />
+    <None Include="Properties\DataSources\Eplanwiki.Scripting.MacroNavi.Settings.datasource" />
+    <None Include="Properties\DataSources\Eplanwiki.Scripting.MacroNavi.WindowMacro+RepresentationType.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

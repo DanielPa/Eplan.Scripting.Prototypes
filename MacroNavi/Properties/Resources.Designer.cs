@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MacroNavi.Properties
-{
+
     using System;
 
-
+namespace Eplanwiki.Scripting.MacroNavi
+{
     /// <summary>
     ///   Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
     /// </summary>
@@ -69,4 +69,5 @@ namespace MacroNavi.Properties
             }
         }
     }
+
 }
