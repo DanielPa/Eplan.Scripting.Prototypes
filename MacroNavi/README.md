@@ -1,7 +1,8 @@
 Eplan Macro-Navigator
 =======================
 
-EN===========================================================================================================================
+EN
+===========================================================================================================================
 A simple navigator for Eplan Electric P8 to preview and place Macros without open-file-dialog.
 
 http://youtu.be/xpTT_k181Hw
@@ -18,7 +19,8 @@ Features:
   - open macropath in windows explorer
   - get macro-description in tooltip by pointing on the entry
  
-DE===========================================================================================================================
+DE
+===========================================================================================================================
 Mit diesem einfachen Werkzeug kann man Fenstermakros direkt (ohne öffenen-Dialog) aus einem Navigator heraus finden und platzieren. 
 
 Anleitung:
