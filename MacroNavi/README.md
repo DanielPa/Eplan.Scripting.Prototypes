@@ -9,7 +9,7 @@ http://youtu.be/xpTT_k181Hw
 
 How to use:
 Copie the scriptfile form MacroNavi/Templates/MacroNaviForm.cs (click on "raw" to get plaintext) and move it to your electric P8 script-folder.
-Start P8 and load the scriptfile by selecting "Load Script" in the Utilities>>Scripts menue. The script must be loaded (no Start option like in older versions).
+Start P8 and load the scriptfile by selecting "Load Script" in the Utilities>>Scripts menue. The script must be loaded (no Start option like in older versions). A new menu entry "Fenstermakros" apears in the Projectdata menu above the entry "Symbols".
 
 Features:
   - Navigate through your default macropath via tree-view
@@ -24,7 +24,7 @@ DE
 Mit diesem einfachen Werkzeug kann man Fenstermakros direkt (ohne öffenen-Dialog) aus einem Navigator heraus finden und platzieren. 
 
 Anleitung:
-Die Scriptdatei aus dem Pfad MacroNavi/Templates/MacroNaviForm.cs in das Script_verzeichnis von P8 kopieren ("raw" anklicken um den rohen Text zu erhalten). P8 starten und über das Manü Dienstprogramme>>Scripte>>Script Laden die zuvor gespeicherte Datei auswählen.
+Die Scriptdatei aus dem Pfad MacroNavi/Templates/MacroNaviForm.cs in das Script_verzeichnis von P8 kopieren ("raw" anklicken um den rohen Text zu erhalten). P8 starten und über das Manü Dienstprogramme>>Scripte>>Script Laden die zuvor gespeicherte Datei auswählen. Im Menü Projektdaten erscheint nun der neue Eintrag "Fenstermakros" über dem Eintrag "Symbole".
 
 Features:
   - mittels Baustruktur durch den standard Makropfad navigieren
