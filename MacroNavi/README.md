@@ -14,7 +14,7 @@ Start P8 and load the scriptfile by selecting "Load Script" in the Utilities>>Sc
 Features:
   - Navigate through your default macropath via tree-view
   - preview by selecting a macro in the list
-  - place macro by doubleclicking, hitting enter on selection or just (pseudo) drag&drop 
+  - place macro by doubleclicking, hitting enter on selection or just drag&drop 
   - place defined representationtype by selecting from contextmenue
   - open macropath in windows explorer
   - get macro-description in tooltip by pointing on the entry
@@ -29,7 +29,7 @@ Die Scriptdatei aus dem Pfad MacroNavi/Templates/MacroNaviForm.cs in das Script_
 Features:
   - mittels Baustruktur durch den standard Makropfad navigieren
   - Makrovorschau wärend der Auswahl
-  - Makos mit Doppelklick, Eingabetaste oder mittels (pseudo) Ziehen&Ablegen platzieren
+  - Makos mit Doppelklick, Eingabetaste oder mittels Ziehen&Ablegen platzieren
   - gewünschte Darstellungsart über ein Kontextmenü auswählbar
   - Pfad des ausgewählten Makroordners im Dateiexplorer anzeigen
   - Makrobeschreibung als Tooltip anzeigen lassen
