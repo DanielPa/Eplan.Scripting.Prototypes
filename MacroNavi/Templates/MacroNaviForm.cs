@@ -563,8 +563,8 @@ namespace Eplanwiki.Scripting.MacroNavi
         {
             if (listView1.SelectedItems.Count > 0 && checkBox1.Checked)
             {                
-                string absoluteMacroName = macropath + treeView1.SelectedNode.FullPath.Replace(treeView1.Nodes[0].Text, "") + "\\" + listView1.SelectedItems[0].Text;                
-                setPreview(absoluteMacroName, currentProject, this.checkBox1.Checked);
+                //string absoluteMacroName = macropath + treeView1.SelectedNode.FullPath.Replace(treeView1.Nodes[0].Text, "") + "\\" + listView1.SelectedItems[0].Text;                
+                setPreview(((ListviewFileItem)e.Item).FullFilePath, currentProject, this.checkBox1.Checked);
             }
             listView1.Focus();
         }
@@ -599,21 +599,21 @@ namespace Eplanwiki.Scripting.MacroNavi
             if (listView1.SelectedItems != null)
             {
                 isDirectory = listView1.SelectedItems[0].SubItems[1].Text.Equals("Directory");
-
+                string equals = listView1.SelectedItems[0].SubItems[0].Text;
 
                 if (isDirectory)
-                {
+                {                    
                     foreach (TreeNode node in treeView1.SelectedNode.Nodes)
                     {
-                        if (node.Text.Equals(listView1.SelectedItems[0].SubItems[0].Text))
+                        if (node.Text.Equals(equals))
                         {
                             treeView1.SelectedNode = node;
                         }
                     }
                 }
                 if(!isDirectory)
-                {
-                    instertMacro(getAbsoluteMacroPath(), WindowMacro.RepresentationType.MultiLine, 0);
+                {                    
+                    instertMacro(((ListviewFileItem)listView1.SelectedItems[0]).FullFilePath, WindowMacro.RepresentationType.MultiLine, 0);
                 }
             }
         }
@@ -628,7 +628,7 @@ namespace Eplanwiki.Scripting.MacroNavi
 
             if (e.KeyChar == (char)Keys.Return)
             {
-                instertMacro(getAbsoluteMacroPath() , WindowMacro.RepresentationType.MultiLine, 0);
+                instertMacro(((ListviewFileItem)listView1.SelectedItems[0]).FullFilePath, WindowMacro.RepresentationType.MultiLine, 0);
             }
 
         }
@@ -652,11 +652,11 @@ namespace Eplanwiki.Scripting.MacroNavi
         /// <summary>
         /// Returns the full filepath accumulated from macropath, selected treenode an listviewitem
         /// </summary>
-        /// <returns></returns>
-        private string getAbsoluteMacroPath()
-        {
-            return macropath + treeView1.SelectedNode.FullPath.Replace(treeView1.Nodes[0].Text, "") + "\\" + listView1.SelectedItems[0].Text;
-        }
+        /// <returns></returns>        
+        //private string getAbsoluteMacroPath()
+        //{
+        //    return macropath + treeView1.SelectedNode.FullPath.Replace(treeView1.Nodes[0].Text, "") + "\\" + listView1.SelectedItems[0].Text;
+        //}
 
         /// <summary>
         /// Called by event if form is closing. Writes the current satus of the form to usersettigs
@@ -716,11 +716,13 @@ namespace Eplanwiki.Scripting.MacroNavi
                 DirectoryInfo nodeDirInfo = (DirectoryInfo)newSelected.Tag;
 
                 ListViewItem.ListViewSubItem[] subItems;
-                ListViewItem item = null;
-
+                ListviewFileItem item = null;
+                
                 foreach (DirectoryInfo dir in nodeDirInfo.GetDirectories())
                 {
-                    item = new ListViewItem(dir.Name, 0);
+
+                    item = new ListviewFileItem(dir.Name, 0);
+                    item.FullFilePath = dir.FullName;
                     subItems = new ListViewItem.ListViewSubItem[]
                     {new ListViewItem.ListViewSubItem(item, "Directory"), 
                      new ListViewItem.ListViewSubItem(item, 
@@ -730,9 +732,9 @@ namespace Eplanwiki.Scripting.MacroNavi
                 }
                 foreach (FileInfo file in nodeDirInfo.GetFiles("*.ema"))
                 {
-                    item = new ListViewItem(file.Name, 1);
+                    item = new ListviewFileItem(file.Name, 1);
                     item.ToolTipText = getListViewItemToolTipText(file);
-
+                    item.FullFilePath = file.FullName;
                     subItems = new ListViewItem.ListViewSubItem[]
                     { new ListViewItem.ListViewSubItem(item, "File"), 
                      new ListViewItem.ListViewSubItem(item, 
@@ -817,8 +819,8 @@ namespace Eplanwiki.Scripting.MacroNavi
         private void repTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             WindowMacro.RepresentationType repType;
-            WindowMacro.representaiontypes.TryGetValue(((ToolStripItem)sender).Text, out repType);
-            instertMacro(getAbsoluteMacroPath(), repType, 0);
+            WindowMacro.representaiontypes.TryGetValue(((ToolStripItem)sender).Text, out repType);            
+            instertMacro(((ListviewFileItem)listView1.SelectedItems[0]).FullFilePath, repType, 0);
         }
         
         /// <summary>
@@ -915,11 +917,11 @@ namespace Eplanwiki.Scripting.MacroNavi
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void listView1_ItemDrag(object sender, ItemDragEventArgs e)
-        {
-            string absoluteMacroName = macropath + treeView1.SelectedNode.FullPath.Replace(treeView1.Nodes[0].Text, "") + "\\" + ((ListViewItem)e.Item).Text;
-            if (File.Exists(absoluteMacroName))
+        {            
+            //string absoluteMacroName = macropath + treeView1.SelectedNode.FullPath.Replace(treeView1.Nodes[0].Text, "") + "\\" + ((ListViewItem)e.Item).Text;
+            if (File.Exists(((ListviewFileItem)e.Item).FullFilePath))
             {
-                string[] filesTodrag = { absoluteMacroName };
+                string[] filesTodrag = { ((ListviewFileItem)e.Item).FullFilePath };
                 DoDragDrop(new DataObject(DataFormats.FileDrop, filesTodrag), DragDropEffects.Copy);
             }                        
         }       
@@ -931,7 +933,7 @@ namespace Eplanwiki.Scripting.MacroNavi
         /// <param name="e"></param>
         private void refreshCurrentProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            currentProject = getAbsoluteMacroPath();
+            currentProject = getCurrentProject();
         }
         
         /// <summary>
@@ -969,6 +971,15 @@ namespace Eplanwiki.Scripting.MacroNavi
     
     }
 
+    public class ListviewFileItem : ListViewItem
+    {
+        private string p1;
+        private int p2;
+
+        public ListviewFileItem(string text, int imageIndex) : base(text, imageIndex) { }
+        
+        public string FullFilePath { get; set; }
+    }
 
     /// <summary>
     /// Contains the enums of macro represetationtypes
