@@ -917,18 +917,13 @@ namespace Eplanwiki.Scripting.MacroNavi
         /// <param name="e"></param>
         private void listView1_ItemDrag(object sender, ItemDragEventArgs e)
         {
-            DoDragDrop(sender, DragDropEffects.All);
-        }
-
-        /// <summary>
-        /// calls the insertMacro-methode if mousdrag leaves the listview
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void listView1_DragLeave(object sender, EventArgs e)
-        {
-            instertMacro(getAbsoluteMacroPath(), WindowMacro.RepresentationType.MultiLine, 0);
-        }
+            string absoluteMacroName = macropath + treeView1.SelectedNode.FullPath.Replace(treeView1.Nodes[0].Text, "") + "\\" + ((ListViewItem)e.Item).Text;
+            if (File.Exists(absoluteMacroName))
+            {
+                string[] filesTodrag = { absoluteMacroName };
+                DoDragDrop(new DataObject(DataFormats.FileDrop, filesTodrag), DragDropEffects.Copy);
+            }                        
+        }       
 
         /// <summary>
         /// workaround for currentProject value lost when form is active
