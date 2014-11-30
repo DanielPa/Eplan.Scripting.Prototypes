@@ -58,7 +58,9 @@ namespace Eplanwiki.Scripting.MacroNavi
                                                 USER_SETTING_SPLITDISTANCE,
                                                 USER_SETTING_PREVIEW};
         private ToolStripMenuItem refreshCurrentProjectToolStripMenuItem;
-        private ToolStripMenuItem openPathToolStripMenuItem;        
+        private ToolStripMenuItem openPathToolStripMenuItem;
+        private int nIndex = 0;
+        private ToolStripMenuItem eigenschaftenToolStripMenuItem;
 
         #region Vom Windows Form-Designer generierter Code
 
@@ -116,6 +118,7 @@ namespace Eplanwiki.Scripting.MacroNavi
             this.verticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteUserSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshCurrentProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eigenschaftenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -130,8 +133,8 @@ namespace Eplanwiki.Scripting.MacroNavi
             this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.Location = new System.Drawing.Point(0, 54);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 43);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -142,10 +145,11 @@ namespace Eplanwiki.Scripting.MacroNavi
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.listView1);
-            this.splitContainer1.Size = new System.Drawing.Size(388, 672);
-            this.splitContainer1.SplitterDistance = 335;
-            this.splitContainer1.SplitterWidth = 6;
+            this.splitContainer1.Size = new System.Drawing.Size(345, 538);
+            this.splitContainer1.SplitterDistance = 268;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
+            this.splitContainer1.TabStop = false;
             // 
             // treeView1
             // 
@@ -153,11 +157,12 @@ namespace Eplanwiki.Scripting.MacroNavi
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.treeView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.treeView1.Location = new System.Drawing.Point(4, 18);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.treeView1.Location = new System.Drawing.Point(4, 14);
+            this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(378, 299);
+            this.treeView1.Size = new System.Drawing.Size(336, 240);
             this.treeView1.TabIndex = 0;
+            this.treeView1.TabStop = false;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             this.treeView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeView1_KeyDown);
             // 
@@ -168,26 +173,26 @@ namespace Eplanwiki.Scripting.MacroNavi
             this.collapseAllToolStripMenuItem,
             this.openPathToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(164, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(193, 76);
             // 
             // expandAllToolStripMenuItem
             // 
             this.expandAllToolStripMenuItem.Name = "expandAllToolStripMenuItem";
-            this.expandAllToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.expandAllToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
             this.expandAllToolStripMenuItem.Text = "Alle erweitern";
             this.expandAllToolStripMenuItem.Click += new System.EventHandler(this.expandAllToolStripMenuItem_Click);
             // 
             // collapseAllToolStripMenuItem
             // 
             this.collapseAllToolStripMenuItem.Name = "collapseAllToolStripMenuItem";
-            this.collapseAllToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.collapseAllToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
             this.collapseAllToolStripMenuItem.Text = "Alle reduzieren";
             this.collapseAllToolStripMenuItem.Click += new System.EventHandler(this.collapseAllToolStripMenuItem_Click);
             // 
             // openPathToolStripMenuItem
             // 
             this.openPathToolStripMenuItem.Name = "openPathToolStripMenuItem";
-            this.openPathToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.openPathToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
             this.openPathToolStripMenuItem.Text = "Dateipfad öffnen";
             this.openPathToolStripMenuItem.Click += new System.EventHandler(this.openPathToolStripMenuItem_Click);
             // 
@@ -202,17 +207,18 @@ namespace Eplanwiki.Scripting.MacroNavi
             this.columnHeader2,
             this.columnHeader3});
             this.listView1.ContextMenuStrip = this.contextMenuStrip3;
-            this.listView1.Location = new System.Drawing.Point(4, 18);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listView1.Location = new System.Drawing.Point(4, 14);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.ShowItemToolTips = true;
-            this.listView1.Size = new System.Drawing.Size(378, 306);
-            this.listView1.TabIndex = 1;
+            this.listView1.Size = new System.Drawing.Size(336, 238);
+            this.listView1.TabIndex = 0;
+            this.listView1.TabStop = false;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.listView1_ItemDrag);
-            this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);            
+            this.listView1.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.listView1_ItemSelectionChanged);
             this.listView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.listView1_KeyPress);
             this.listView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseDoubleClick);
             // 
@@ -239,70 +245,71 @@ namespace Eplanwiki.Scripting.MacroNavi
             this.articlePlacementToolStripMenuItem,
             this.pi_FlowChartToolStripMenuItem,
             this.fluid_MultiLineToolStripMenuItem,
-            this.articlePlacement3DToolStripMenuItem});
+            this.articlePlacement3DToolStripMenuItem,
+            this.eigenschaftenToolStripMenuItem});
             this.contextMenuStrip3.Name = "contextMenuStrip3";
-            this.contextMenuStrip3.Size = new System.Drawing.Size(185, 202);
+            this.contextMenuStrip3.Size = new System.Drawing.Size(214, 266);
             // 
             // multiLineToolStripMenuItem
             // 
             this.multiLineToolStripMenuItem.Name = "multiLineToolStripMenuItem";
-            this.multiLineToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.multiLineToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.multiLineToolStripMenuItem.Text = "Allpolig";
             this.multiLineToolStripMenuItem.Click += new System.EventHandler(this.repTypeToolStripMenuItem_Click);
             // 
             // singleLineToolStripMenuItem
             // 
             this.singleLineToolStripMenuItem.Name = "singleLineToolStripMenuItem";
-            this.singleLineToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.singleLineToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.singleLineToolStripMenuItem.Text = "Einpolig";
             this.singleLineToolStripMenuItem.Click += new System.EventHandler(this.repTypeToolStripMenuItem_Click);
             // 
             // pairCrossReferenceToolStripMenuItem
             // 
             this.pairCrossReferenceToolStripMenuItem.Name = "pairCrossReferenceToolStripMenuItem";
-            this.pairCrossReferenceToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.pairCrossReferenceToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.pairCrossReferenceToolStripMenuItem.Text = "Paarquerverweis";
             this.pairCrossReferenceToolStripMenuItem.Click += new System.EventHandler(this.repTypeToolStripMenuItem_Click);
             // 
             // overviewToolStripMenuItem
             // 
             this.overviewToolStripMenuItem.Name = "overviewToolStripMenuItem";
-            this.overviewToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.overviewToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.overviewToolStripMenuItem.Text = "Übersicht";
             this.overviewToolStripMenuItem.Click += new System.EventHandler(this.repTypeToolStripMenuItem_Click);
             // 
             // graphicsToolStripMenuItem
             // 
             this.graphicsToolStripMenuItem.Name = "graphicsToolStripMenuItem";
-            this.graphicsToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.graphicsToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.graphicsToolStripMenuItem.Text = "Grafik";
             this.graphicsToolStripMenuItem.Click += new System.EventHandler(this.repTypeToolStripMenuItem_Click);
             // 
             // articlePlacementToolStripMenuItem
             // 
             this.articlePlacementToolStripMenuItem.Name = "articlePlacementToolStripMenuItem";
-            this.articlePlacementToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.articlePlacementToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.articlePlacementToolStripMenuItem.Text = "Schaltschrankaufbau";
             this.articlePlacementToolStripMenuItem.Click += new System.EventHandler(this.repTypeToolStripMenuItem_Click);
             // 
             // pi_FlowChartToolStripMenuItem
             // 
             this.pi_FlowChartToolStripMenuItem.Name = "pi_FlowChartToolStripMenuItem";
-            this.pi_FlowChartToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.pi_FlowChartToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.pi_FlowChartToolStripMenuItem.Text = "RI-Fließbild";
             this.pi_FlowChartToolStripMenuItem.Click += new System.EventHandler(this.repTypeToolStripMenuItem_Click);
             // 
             // fluid_MultiLineToolStripMenuItem
             // 
             this.fluid_MultiLineToolStripMenuItem.Name = "fluid_MultiLineToolStripMenuItem";
-            this.fluid_MultiLineToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.fluid_MultiLineToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.fluid_MultiLineToolStripMenuItem.Text = "Allpolig Fluid";
             this.fluid_MultiLineToolStripMenuItem.Click += new System.EventHandler(this.repTypeToolStripMenuItem_Click);
             // 
             // articlePlacement3DToolStripMenuItem
             // 
             this.articlePlacement3DToolStripMenuItem.Name = "articlePlacement3DToolStripMenuItem";
-            this.articlePlacement3DToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.articlePlacement3DToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.articlePlacement3DToolStripMenuItem.Text = "3D-Montageaufbau";
             this.articlePlacement3DToolStripMenuItem.Click += new System.EventHandler(this.repTypeToolStripMenuItem_Click);
             // 
@@ -312,11 +319,12 @@ namespace Eplanwiki.Scripting.MacroNavi
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(292, 18);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.checkBox1.Location = new System.Drawing.Point(255, 14);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(96, 24);
-            this.checkBox1.TabIndex = 3;
+            this.checkBox1.Size = new System.Drawing.Size(90, 21);
+            this.checkBox1.TabIndex = 1;
+            this.checkBox1.TabStop = false;
             this.checkBox1.Text = "Vorschau";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -328,7 +336,7 @@ namespace Eplanwiki.Scripting.MacroNavi
             this.deleteUserSettingsToolStripMenuItem,
             this.refreshCurrentProjectToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(190, 70);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(221, 76);
             // 
             // splitOrientationToolStripMenuItem
             // 
@@ -336,46 +344,53 @@ namespace Eplanwiki.Scripting.MacroNavi
             this.horizontalToolStripMenuItem,
             this.verticalToolStripMenuItem});
             this.splitOrientationToolStripMenuItem.Name = "splitOrientationToolStripMenuItem";
-            this.splitOrientationToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.splitOrientationToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
             this.splitOrientationToolStripMenuItem.Text = "Aufteilung";
             // 
             // horizontalToolStripMenuItem
             // 
             this.horizontalToolStripMenuItem.Name = "horizontalToolStripMenuItem";
-            this.horizontalToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.horizontalToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
             this.horizontalToolStripMenuItem.Text = "Horizontal";
             this.horizontalToolStripMenuItem.Click += new System.EventHandler(this.horizontalToolStripMenuItem_Click);
             // 
             // verticalToolStripMenuItem
             // 
             this.verticalToolStripMenuItem.Name = "verticalToolStripMenuItem";
-            this.verticalToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.verticalToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
             this.verticalToolStripMenuItem.Text = "Vertikal";
             this.verticalToolStripMenuItem.Click += new System.EventHandler(this.verticalToolStripMenuItem_Click);
             // 
             // deleteUserSettingsToolStripMenuItem
             // 
             this.deleteUserSettingsToolStripMenuItem.Name = "deleteUserSettingsToolStripMenuItem";
-            this.deleteUserSettingsToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.deleteUserSettingsToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
             this.deleteUserSettingsToolStripMenuItem.Text = "Einstellungen löschen";
             this.deleteUserSettingsToolStripMenuItem.Click += new System.EventHandler(this.deleteUserSettingsToolStripMenuItem_Click);
             // 
             // refreshCurrentProjectToolStripMenuItem
             // 
             this.refreshCurrentProjectToolStripMenuItem.Name = "refreshCurrentProjectToolStripMenuItem";
-            this.refreshCurrentProjectToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.refreshCurrentProjectToolStripMenuItem.Size = new System.Drawing.Size(220, 24);
             this.refreshCurrentProjectToolStripMenuItem.Text = "Projekt aktualisieren";
             this.refreshCurrentProjectToolStripMenuItem.Click += new System.EventHandler(this.refreshCurrentProjectToolStripMenuItem_Click);
             // 
+            // eigenschaftenToolStripMenuItem
+            // 
+            this.eigenschaftenToolStripMenuItem.Name = "eigenschaftenToolStripMenuItem";
+            this.eigenschaftenToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
+            this.eigenschaftenToolStripMenuItem.Text = "Eigenschaften...";
+            this.eigenschaftenToolStripMenuItem.Click += new System.EventHandler(this.eigenschaftenToolStripMenuItem_Click);
+            // 
             // MacroNavi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 729);
+            this.ClientSize = new System.Drawing.Size(345, 583);
             this.ContextMenuStrip = this.contextMenuStrip2;
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MacroNavi";
@@ -529,6 +544,55 @@ namespace Eplanwiki.Scripting.MacroNavi
                 getDirectories(info.GetDirectories(), rootNode);
                 treeView1.Nodes.Add(rootNode);
             }
+            treeView1.Sort();
+        }
+
+        /// <summary>
+        /// <see cref="http://msdn.microsoft.com/en-us/library/ms171645(v=vs.90).aspx"/>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            TreeNode newSelected = e.Node;
+            listView1.Items.Clear();
+            try
+            {
+                DirectoryInfo nodeDirInfo = (DirectoryInfo)newSelected.Tag;
+                ListViewItem.ListViewSubItem[] subItems;
+                ListviewFileItem item = null;
+
+                foreach (DirectoryInfo dir in nodeDirInfo.GetDirectories())
+                {
+                    item = new ListviewFileItem(dir.Name, 0);
+                    item.FullFilePath = dir.FullName;
+                    subItems = new ListViewItem.ListViewSubItem[]
+                    {new ListViewItem.ListViewSubItem(item, "Directory"), 
+                     new ListViewItem.ListViewSubItem(item, 
+						dir.LastAccessTime.ToShortDateString())};
+                    item.SubItems.AddRange(subItems);
+                    listView1.Items.Add(item);
+                }
+                foreach (FileInfo file in nodeDirInfo.GetFiles("*.ema"))
+                {
+                    item = new ListviewFileItem(file.Name, 1);
+                    item.ToolTipText = getListViewItemToolTipText(file);
+                    item.FullFilePath = file.FullName;
+                    subItems = new ListViewItem.ListViewSubItem[]
+                    { new ListViewItem.ListViewSubItem(item, "File"), 
+                     new ListViewItem.ListViewSubItem(item, 
+						file.LastAccessTime.ToShortDateString())};
+
+                    item.SubItems.AddRange(subItems);
+                    listView1.Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fehlgeschlagen: " + ex.Message, "Pfad nicht gefunden", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         /// <summary>
@@ -700,56 +764,6 @@ namespace Eplanwiki.Scripting.MacroNavi
         private void collapseAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             treeView1.CollapseAll();
-        }
-
-        /// <summary>
-        /// <see cref="http://msdn.microsoft.com/en-us/library/ms171645(v=vs.90).aspx"/>
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {            
-            TreeNode newSelected = e.Node;
-            listView1.Items.Clear();
-            try
-            {
-                DirectoryInfo nodeDirInfo = (DirectoryInfo)newSelected.Tag;
-
-                ListViewItem.ListViewSubItem[] subItems;
-                ListviewFileItem item = null;
-                
-                foreach (DirectoryInfo dir in nodeDirInfo.GetDirectories())
-                {
-
-                    item = new ListviewFileItem(dir.Name, 0);
-                    item.FullFilePath = dir.FullName;
-                    subItems = new ListViewItem.ListViewSubItem[]
-                    {new ListViewItem.ListViewSubItem(item, "Directory"), 
-                     new ListViewItem.ListViewSubItem(item, 
-						dir.LastAccessTime.ToShortDateString())};
-                    item.SubItems.AddRange(subItems);
-                    listView1.Items.Add(item);
-                }
-                foreach (FileInfo file in nodeDirInfo.GetFiles("*.ema"))
-                {
-                    item = new ListviewFileItem(file.Name, 1);
-                    item.ToolTipText = getListViewItemToolTipText(file);
-                    item.FullFilePath = file.FullName;
-                    subItems = new ListViewItem.ListViewSubItem[]
-                    { new ListViewItem.ListViewSubItem(item, "File"), 
-                     new ListViewItem.ListViewSubItem(item, 
-						file.LastAccessTime.ToShortDateString())};
-
-                    item.SubItems.AddRange(subItems);
-                    listView1.Items.Add(item);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Fehlgeschlagen: " + ex.Message, "Pfad nicht gefunden", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-            listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         /// <summary>
@@ -964,11 +978,15 @@ namespace Eplanwiki.Scripting.MacroNavi
         private void treeView1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F5)
-            {
+            {              
                 populateTreeView();
             }
         }
-    
+
+        private void eigenschaftenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WindowMacro wm = new WindowMacro(((ListviewFileItem)listView1.SelectedItems[0]).FullFilePath);
+        }        
     }
 
     public class ListviewFileItem : ListViewItem
@@ -984,8 +1002,53 @@ namespace Eplanwiki.Scripting.MacroNavi
     /// <summary>
     /// Contains the enums of macro represetationtypes
     /// </summary>
-    public static class WindowMacro
+    public class WindowMacro
     {
+        private const string NAME_ATTRIBUTE = "EplanPxfRoot/@Name";
+        private const string REPRESTYPE_ATTRIBUTE = "MacroVariant/@MacroFuncType";
+        private const string VARIANT_ATTRIBUTE = "MacroVariant/@VariantId";
+        private const string VERSION_ATTRIBUTE = "P11/@P23002";
+        private const string SOURCE_ATTRIBUTE = "";
+        private const string DESCRIPTION_ATTRIBUTE = "";
+        private const string INSPOINTACTIVE_ATTRIBUTE = "";
+        private const string INSPOINTX_ATTRIBUTE = "";
+        private const string INSPOINTY_ATTRIBUTE = "";
+        private const string REFERENCEACTIVE_ATTRIBUTE = "";
+        private XmlDocument xmlDoc;
+        private XmlNamespaceManager xmlNamSpaceMgr;
+        private XmlAttribute xmlAttribute;
+
+        public string Name { get; set; }
+        public RepresentationType Representationtype { get; set; }
+        public int[] Variants { get; set; }
+        public string Version { get; set; }
+        public string Source_Reference { get; set; }
+        public string Description { get; set; }
+        public bool InsertionPointActive { get; set; }
+        public double InsertionPoint_X { get; set; }
+        public double InsertionPoint_Y { get; set; }
+        public bool ReferencesActive { get; set; }
+
+         
+        public WindowMacro(string filename)
+        {
+            xmlDoc = new XmlDocument();
+            
+            if (File.Exists(filename))
+            {
+                xmlDoc.Load(filename);
+                xmlNamSpaceMgr = new XmlNamespaceManager(xmlDoc.NameTable);
+
+                Name = ((XmlAttribute)xmlDoc.SelectSingleNode(NAME_ATTRIBUTE, xmlNamSpaceMgr)).Value;
+                Variants = new int[xmlDoc.SelectNodes(VARIANT_ATTRIBUTE, xmlNamSpaceMgr).Count];
+                for (int i = 0; i < xmlDoc.SelectNodes(VARIANT_ATTRIBUTE, xmlNamSpaceMgr).Count; i++)
+                {
+                    Variants[i] = Convert.ToInt32(xmlDoc.SelectNodes(VARIANT_ATTRIBUTE, xmlNamSpaceMgr).Item(i).Value);
+                }
+                
+                MessageBox.Show(Name+Variants.Length);
+            }
+        }
         /// <summary>
         /// Dictionary with clear name and enum of representationtype of a macro
         /// </summary>
@@ -1038,5 +1101,5 @@ namespace Eplanwiki.Scripting.MacroNavi
             get { return _hwnd; }
         }
         private IntPtr _hwnd;
-    }
+    }    
 }
