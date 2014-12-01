@@ -26,9 +26,10 @@ namespace Eplanwiki.Scripting.ContextMenu
         }
 
         public void InitiateMenu()
-	    {	    
-            menu = new Eplan.EplApi.Gui.ContextMenu();
-            menuLocation = new ContextMenuLocation("PmPageObjectTreeDialog", "1007");
+	    {
+	    	menuText = setMenuText();
+            	menu = new Eplan.EplApi.Gui.ContextMenu();
+            	menuLocation = new ContextMenuLocation("PmPageObjectTreeDialog", "1007");
 		    menu.AddMenuItem(menuLocation, menuText, "OpenProjectFilePath", false, false);            
 	    }
 
