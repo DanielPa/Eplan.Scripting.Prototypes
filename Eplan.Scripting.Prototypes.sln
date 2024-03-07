@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacroNavi", "MacroNavi\Macr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewProjectWithIdDescriptions", "NewProjectWithIdDescriptions\NewProjectWithIdDescriptions.csproj", "{20D54BC8-380C-4330-BC63-F7B8D1CC4A4F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslateWithDeepL", "TranslateWithDeepL\TranslateWithDeepL.csproj", "{37886E9D-0DA0-4714-A86B-A34ACE6650D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,5 +30,9 @@ Global
 		{20D54BC8-380C-4330-BC63-F7B8D1CC4A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20D54BC8-380C-4330-BC63-F7B8D1CC4A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20D54BC8-380C-4330-BC63-F7B8D1CC4A4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37886E9D-0DA0-4714-A86B-A34ACE6650D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37886E9D-0DA0-4714-A86B-A34ACE6650D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37886E9D-0DA0-4714-A86B-A34ACE6650D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37886E9D-0DA0-4714-A86B-A34ACE6650D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
