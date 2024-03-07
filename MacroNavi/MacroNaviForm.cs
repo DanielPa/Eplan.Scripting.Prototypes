@@ -848,11 +848,9 @@ namespace Eplanwiki.Scripting.MacroNavi
             if (!oSettings.ExistSetting(USER_SETTING_FORMLOCATION))
             {
                 oSettings.AddNumericSetting(USER_SETTING_FORMLOCATION,
-                    new int[] { 0 },
-                    new Range[] { new Range { FromValue = -32768, ToValue = 32768 } },
-                    "Default value of test setting",
-                    new int[] { 0 },
-                    ISettings.CreationFlag.Insert);
+                                            new int[] { 0 },
+                                            new Range[] { new Range { FromValue = -32768, ToValue = 32768 } },
+                                            ISettings.CreationFlag.Insert);
             }
 
             oSettings.SetNumericSetting(USER_SETTING_FORMLOCATION, this.Top, 0);
@@ -860,11 +858,9 @@ namespace Eplanwiki.Scripting.MacroNavi
             if (!oSettings.ExistSetting(USER_SETTING_FORMSIZE))
             {
                 oSettings.AddNumericSetting(USER_SETTING_FORMSIZE,
-                    new int[] { 0 },
-                    new Range[] { new Range { FromValue = -32768, ToValue = 32768 } },
-                    "Default value of test setting",
-                    new int[] { 0 },
-                    ISettings.CreationFlag.Insert);
+                                            new int[] { 0 },
+                                            new Range[] { new Range { FromValue = -32768, ToValue = 32768 } },
+                                            ISettings.CreationFlag.Insert);
             }
             oSettings.SetNumericSetting(USER_SETTING_FORMSIZE, this.Height, 0);
             oSettings.SetNumericSetting(USER_SETTING_FORMSIZE, this.Width, 1);
@@ -873,31 +869,25 @@ namespace Eplanwiki.Scripting.MacroNavi
             if (!oSettings.ExistSetting(USER_SETTING_ORIENTATION))
             {
                 oSettings.AddNumericSetting(USER_SETTING_ORIENTATION,
-                    new int[] { 0 },
-                    new Range[] { new Range { FromValue = 0, ToValue = 1 } },
-                    "Default value of test setting",
-                    new int[] { 0 },
-                    ISettings.CreationFlag.Insert);
+                                            new int[] { 0 },
+                                            new Range[] { new Range { FromValue = 0, ToValue = 1 } },
+                                            ISettings.CreationFlag.Insert);
             }
             oSettings.SetNumericSetting(USER_SETTING_ORIENTATION, (int)this.splitContainer1.Orientation, 0);
 
             if (!oSettings.ExistSetting(USER_SETTING_SPLITDISTANCE))
             {
                 oSettings.AddNumericSetting(USER_SETTING_SPLITDISTANCE,
-                    new int[] { 0 },
-                    new Range[] { new Range { FromValue = -32768, ToValue = 32768 } },
-                    "Default value of test setting",
-                    new int[] { 0 },
-                    ISettings.CreationFlag.Insert);
+                                            new int[] { 0 },
+                                            new Range[] { new Range { FromValue = -32768, ToValue = 32768 } },
+                                            ISettings.CreationFlag.Insert);
             }
             oSettings.SetNumericSetting(USER_SETTING_SPLITDISTANCE, (int)this.splitContainer1.SplitterDistance, 0);
 
             if (!oSettings.ExistSetting(USER_SETTING_PREVIEW))
             {
                 oSettings.AddBoolSetting(USER_SETTING_PREVIEW, new bool[] { false },
-                    "Default value of test setting",
-                    new bool[] { false },
-                    ISettings.CreationFlag.Insert);
+                                         ISettings.CreationFlag.Insert);
             }
             oSettings.SetBoolSetting(USER_SETTING_PREVIEW, this.checkBox1.Checked, 0);
         }
