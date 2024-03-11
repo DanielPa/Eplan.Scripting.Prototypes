@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewProjectWithIdDescription
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslateWithDeepL", "TranslateWithDeepL\TranslateWithDeepL.csproj", "{37886E9D-0DA0-4714-A86B-A34ACE6650D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransparancySlider", "TransparancySlider\TransparancySlider.csproj", "{5E5341F9-331A-4CF3-AC2E-9D9D3785BC7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,5 +36,9 @@ Global
 		{37886E9D-0DA0-4714-A86B-A34ACE6650D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37886E9D-0DA0-4714-A86B-A34ACE6650D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37886E9D-0DA0-4714-A86B-A34ACE6650D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E5341F9-331A-4CF3-AC2E-9D9D3785BC7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E5341F9-331A-4CF3-AC2E-9D9D3785BC7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E5341F9-331A-4CF3-AC2E-9D9D3785BC7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E5341F9-331A-4CF3-AC2E-9D9D3785BC7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
