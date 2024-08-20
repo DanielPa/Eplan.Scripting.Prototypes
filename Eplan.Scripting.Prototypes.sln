@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslateWithDeepL", "Trans
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransparancySlider", "TransparancySlider\TransparancySlider.csproj", "{5E5341F9-331A-4CF3-AC2E-9D9D3785BC7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslateWithDeepLConsole", "TranslateWithDeepLConsole\TranslateWithDeepLConsole.csproj", "{591B2A81-A345-4F47-97CE-0409E6EF8D19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,5 +42,9 @@ Global
 		{5E5341F9-331A-4CF3-AC2E-9D9D3785BC7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E5341F9-331A-4CF3-AC2E-9D9D3785BC7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E5341F9-331A-4CF3-AC2E-9D9D3785BC7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{591B2A81-A345-4F47-97CE-0409E6EF8D19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{591B2A81-A345-4F47-97CE-0409E6EF8D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{591B2A81-A345-4F47-97CE-0409E6EF8D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{591B2A81-A345-4F47-97CE-0409E6EF8D19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
